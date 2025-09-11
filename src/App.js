@@ -1,7 +1,6 @@
 import React, { lazy, Suspense, useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
-import RestaurantCard from "./components/Restaurant";
 import Body from "./components/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
@@ -9,7 +8,6 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
-// import GroceryStore from "./components/GroceryStore";
 import {Provider} from "react-redux"
 import Cart from "./components/Cart";
 //lazyloading, onDemand loading

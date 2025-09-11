@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { MENU_API_URL, IMG_CDN_URL } from "../utils/constants";
+import { MENU_API_URL} from "../utils/constants";
 const useRestaurantmenudata=(resId)=>{
  // fetchData
     const [resInfo, setresInfo] = useState(null);
     useEffect(() => {
         fetchData();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);// empty array means useEffect will be called only once
     
       const fetchData = async () => {
