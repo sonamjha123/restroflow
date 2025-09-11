@@ -1,4 +1,4 @@
-import React, { use } from 'react'
+import React from 'react'
 import { LOGO_URL } from '../utils/constants'
 import { useState, useContext} from 'react'
 import { Link } from 'react-router-dom'

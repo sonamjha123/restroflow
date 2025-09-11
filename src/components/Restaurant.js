@@ -10,7 +10,6 @@ const RestaurantCard = (props) => {
     sla,
     totalRatingsString,
     cuisines,
-    avgRating,
   } = resData?.info;
   const { loggedInUser } = useContext(UserContext);
   return (

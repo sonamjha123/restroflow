@@ -1,5 +1,4 @@
 import ItemListCategory from "./ItemListCategory"
-import { useState } from "react"
 const RestaurantCategory = (props) => {
   // const [showItems, setShowItems] = useState(false);
     const handleClick = () => {

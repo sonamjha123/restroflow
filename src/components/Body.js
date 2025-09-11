@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import RestaurantCard ,{withPromotedLabel} from "./Restaurant";
-import KFCobjrestaurantslist from "../utils/mockData";
 import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
