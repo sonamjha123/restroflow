@@ -23,13 +23,12 @@ class UserProfile extends React.Component {
     console.log(json);
   }
   render() {
-   
   const { name,location,avatar_url} = this.state.userInfo;
   return (
-      <div className="user-profile">
+      <div className="p-2 m-2 display-flex justify-center items-center flex-col">
         <h4>Name:{name}</h4>
         <h4>Location:{location}</h4>
-        <img className="avatar" src={avatar_url} alt="img" />
+        <img className="w-24 rounded-full " src={avatar_url} alt="img" />
       </div>
     );
   }

@@ -1,24 +1,39 @@
 import React from "react";
-import UserProfileclass from "./UserProfileclass";
+import UserProfileClass from "./UserProfileclass";
 import UserContext from "../utils/UserContext";
+
 class About extends React.Component {
-  componentDidMount() {}
   render() {
     return (
-      <div>
-        <h1>About</h1>
-        <div>
-          Logged In User is
+      <section className="max-w-3xl m-10  p-8 bg-white rounded-lg shadow-md">
+        <h1 className="text-3xl font-extrabold text-gray-800 mb-6 border-b pb-2">
+          About
+        </h1>
+
+        <div className="mb-4">
           <UserContext.Consumer>
             {({ loggedInUser }) => (
-              <h1 className="text-1xl font-bold">{loggedInUser}</h1>
+              <p className="text-lg text-gray-700">
+                <span className="font-semibold text-gray-900">Logged In User : </span>{" "}
+                <span className="text-indigo-600 font-bold">
+                  {loggedInUser || "Guest"}
+                </span>
+              </p>
             )}
           </UserContext.Consumer>
         </div>
-        <p className="text-1xl font-bold">This is Food Ordering App</p>
-        {/* <UserProfile name="John- function" location="New York" contact="1234567890" /> */}
-        <UserProfileclass />
-      </div>
+
+        <p className="text-gray-600 text-base leading-relaxed mb-8">
+          Welcome to the <span className="font-semibold">Food Ordering App</span> – 
+          your one-stop solution for discovering restaurants, browsing menus, and 
+          placing orders effortlessly.
+        </p>
+
+        {/* Example profile component */}
+        <div className="border-t pt-6">
+          <UserProfileClass />
+        </div>
+      </section>
     );
   }
 }
