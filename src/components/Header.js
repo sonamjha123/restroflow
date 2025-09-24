@@ -30,25 +30,25 @@ const Header = () => {
            
          <div className="flex items-center">
          <ul className='flex p-4 m-4'>
-          <li className='px-4'>Online Status: {onlineStatus ? "✅" : "🔴"}</li>
-           <li>
+          <li className='px-4  hover:text-orange-600'>Online Status: {onlineStatus ? "✅" : "🔴"}</li>
+           <li className='px-4  hover:text-orange-600'>
              {/*Link tag is used to create hyperlinks and navigate to another page 
             without reloading the page like <a></a> tag.*/} 
             <Link to="/">Home</Link></li>
-           <li className='px-4'>
+           <li className='px-4  hover:text-orange-600'>
             <Link to="/about">About Us</Link></li>
-           <li className='px-4'>
+           <li className='px-4  hover:text-orange-600'>
             <Link to="/contact">Contact Us</Link>
             </li>  
-           <li className='px-4'>
+           <li className='px-4  hover:text-orange-600'>
             <Link to="/grocery">Grocery</Link></li>  
-           <li className='px-4'>
+           <li className='px-4 hover:text-orange-600' >
             <Link to="/cart">Cart-({cartItems.length} items)</Link></li>
-           <button className="px-4"
+           <button className="px-4  hover:text-orange-600"
            onClick={() => { 
             btnName === "Login" ? setBtnName("Logout") :
              setBtnName("Login")} }>{btnName}</button>
-             <li className='px-4 font-bold'>{loggedInUser}</li>
+             <li className='px-4 font-bold  hover:text-orange-600'>{loggedInUser}</li>
          </ul>
         </div>       
         </div>

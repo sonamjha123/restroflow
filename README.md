@@ -1,21 +1,7 @@
 
 # 🍴 Restaurant App
 
-A modern restaurant application built with **React**, featuring efficient state management, optimized performance, and a clean UI for seamless food ordering and browsing.
-
----
-
-## Features
-
-### ⚡ Development & Build (Powered by Parcel)
-
-* Local dev server with **HMR (Hot Module Replacement)**
-* **Fast rebuilds** with C++ file-watching algorithm & caching
-* **Optimized assets** – image compression, minification, bundling
-* **Tree shaking & code splitting** for leaner builds
-* **Differential bundling** – ensures compatibility with older browsers
-* Built-in **diagnostics & error handling**
-* **HTTPS support** out of the box
+A modern restaurant application built with **React** , **Tailwind CSS**, **Redux Toolkit** featuring efficient state management, optimized performance, and a clean UI for seamless food ordering and browsing.
 
 ---
 
