@@ -1,46 +1,38 @@
 
-# 🍴 Restaurant App
+#  **Restroflow — Modern Restaurant Web App**
 
-A modern restaurant application built with **React** , **Tailwind CSS**, **Redux Toolkit** featuring efficient state management, optimized performance, and a clean UI for seamless food ordering and browsing.
-
----
-
-## UI 
-
-**Header**
-
-* Logo
-* Navigation items
-
-**Body**
-
-* Search bar
-* Restaurant container
-
-  * Restaurant card with:
-
-    * Dish name
-    * Image
-    * Restaurant name
-    * Rating
-    * Cuisines
-    * Delivery time
-
-**Footer**
-
-* Copyright
-* Links
-* Address
-* Contact
+> A scalable, responsive restaurant browsing and food discovery platform built with **React**, **Redux Toolkit**, and **Tailwind CSS**, showcasing efficient state management and modular UI architecture.
 
 ---
 
-## Tech Stack
+## **Overview**
 
-* **Frontend**: React, React Router
-* **State Management**: Redux Toolkit, Context API
-* **Build Tool**: Parcel
-* **Styling**: CSS Modules / Tailwind 
+DineSmart allows users to **search, explore, and browse restaurants** seamlessly.
+Built with **component-driven architecture**, the app emphasizes **performance**, **maintainability**, and **responsive design**.
 
 ---
 
+## **Key Features**
+
+* **Dynamic Search:** Filter restaurants in real-time
+* **Restaurant Cards:** Display dish name, image, cuisines, rating, delivery time
+* **Responsive Layout:** Works across desktop, tablet, and mobile
+* **Modular UI Components:** Reusable header, footer, and card components
+* **Performance Optimized:** Lazy loading and efficient state management with Redux Toolkit
+
+---
+
+## **Tech Stack**
+
+**Frontend:** React.js, React Router
+**State Management:** Redux Toolkit, Context API
+**Styling:** Tailwind CSS, CSS Modules
+**Build Tool:** Parcel
+**Version Control:** Git, GitHub
+
+---
+
+
+
+
+Do you want me to do that next?
