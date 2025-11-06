@@ -43,10 +43,7 @@ This repository is intended as a portfolio-quality project that can be extended 
 
 ## Demo / Screenshots
 
-- Live demo: (add your deployed URL here)
-- Screenshot examples: place images in `/public/screenshots` and reference them here.
-
-A short 1–2 minute screencast demonstrating core flows (search, card view, responsive behavior) is highly recommended for hiring or product reviews.
+- Live demo: peppy-sable-30a921.netlify.app/
 
 ---
 
