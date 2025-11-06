@@ -18,12 +18,6 @@
 - [Architecture & folder structure](#architecture--folder-structure)
 - [Getting started (local development)](#getting-started-local-development)
 - [Docker & production build](#docker--production-build)
-- [Environment variables](#environment-variables)
-- [Testing & quality gates](#testing--quality-gates)
-- [CI / CD](#ci--cd)
-- [Production considerations](#production-considerations)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ---
@@ -128,55 +122,9 @@ A Dockerfile and docker-compose can be added to provide reproducible builds and 
 
 ---
 
-## Environment variables
+## Todo- Production considerations & next steps 
 
-Do not commit secrets. Add a `.env.example` with required keys:
-
-```
-REACT_APP_API_URL=https://api.example.com
-REACT_APP_GOOGLE_ANALYTICS_ID=G-XXXXXX
-```
-
-Load env vars in local development using `.env` (not checked in).
-
----
-
-## Testing & quality gates
-
-Recommended setup:
-- Unit & component tests: Jest + React Testing Library
-- E2E tests: Playwright or Cypress (cover critical flows: search, restaurant page, responsive)
-- Linting & formatting: ESLint + Prettier
-- Pre-commit hooks: Husky + lint-staged to run format/lint on changed files
-
-Run tests
-```bash
-npm test
-```
-
-Run lint
-```bash
-npm run lint
-```
-
----
-
-## CI / CD
-
-Add a GitHub Actions workflow to run:
-- npm ci
-- lint
-- test
-- build
-- publish artifacts / deploy to hosting (Netlify, Vercel, or container registry)
-
-Consider adding preview deployments for pull requests (Netlify / Vercel preview or ephemeral review apps).
-
----
-
-## Production considerations & next steps (why this matters)
-
-To elevate this repo from a portfolio app to production-grade, consider:
+To elevate this repo from a portfolio app to production-grade,
 - Add a backend (Express, NestJS, or serverless functions) with a persistent DB (Postgres / Mongo) and migrations (Prisma / TypeORM).
 - Use managed storage / CDN for images/media (S3 + CloudFront, Cloudinary, or Mux for video).
 - Add authentication (JWT + refresh tokens or OAuth) and an admin interface for managing restaurants.
@@ -186,31 +134,6 @@ To elevate this repo from a portfolio app to production-grade, consider:
 - Accessibility (a11y) and performance budgets validated with Lighthouse.
 - TypeScript migration for stronger typing and clearer contracts.
 
-Each of these is a strong signal to hiring managers for senior roles.
 
 ---
 
-## Contributing
-
-Contributions are welcome. Please follow these steps:
-1. Fork the repo
-2. Create a feature branch
-3. Add tests and linting as needed
-4. Open a PR with a clear description of changes
-
-Add a `CONTRIBUTING.md` to document code style, PR expectations and commit message conventions.
-
----
-
-## License
-
-This project is open source under the MIT License — see the LICENSE file for details.
-
----
-
-## Contact
-
-Created by Sonam Jha — https://github.com/sonamjha123  
-For demos, interviews, or questions: add your email or LinkedIn link here.
-
----
