@@ -1,59 +1,95 @@
-import React from 'react'
-import { LOGO_URL } from '../utils/constants'
-import { useState, useContext} from 'react'
-import { Link } from 'react-router-dom'
-import useOnlinestatus from '../Hooks/useOnlinestatus'
-import UserContext from '../utils/UserContext'
-import { useSelector } from 'react-redux'
+import React, { useState, useContext } from "react";
+import { LOGO_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
+import useOnlinestatus from "../Hooks/useOnlinestatus";
+import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
+
 const Header = () => {
-  const[btnName, setBtnName] = useState("Login")
- const {loggedInUser}= useContext(UserContext)
-  const onlineStatus = useOnlinestatus()
-  //Useffect hook:
-  /*
-  1. if no dependency array is passed, useEffect will be called on every render.
-  2. if the dependency array is empty, useEffect will be called only once in the initial render.    
-  3. if the dependency array is passed, useEffect will be called on every render
-  when the values in the dependency array change.
-  */
-
-  //subscribIng to the store using useSelector
+  const [btnName, setBtnName] = useState("Login");
+  const { loggedInUser } = useContext(UserContext);
+  const onlineStatus = useOnlinestatus();
   const cartItems = useSelector((store) => store.cart.items);
-    return(
-        <div className="flex justify-between shadow-lg sm:bg-slate-100">
-         <div className="logo-container">
-           <img className = "w-24" 
-           src={LOGO_URL}
-           alt="img-logo"/>
-           <h5 className='text-sm'>Fork & Flame</h5>
-           </div>
-           
-         <div className="flex items-center">
-         <ul className='flex p-4 m-4'>
-          <li className='px-4  hover:text-orange-600'>Online Status: {onlineStatus ? "✅" : "🔴"}</li>
-           <li className='px-4  hover:text-orange-600'>
-             {/*Link tag is used to create hyperlinks and navigate to another page 
-            without reloading the page like <a></a> tag.*/} 
-            <Link to="/">Home</Link></li>
-           <li className='px-4  hover:text-orange-600'>
-            <Link to="/about">About Us</Link></li>
-           <li className='px-4  hover:text-orange-600'>
-            <Link to="/contact">Contact Us</Link>
-            </li>  
-           <li className='px-4  hover:text-orange-600'>
-            <Link to="/grocery">Grocery</Link></li>  
-           <li className='px-4 hover:text-orange-600' >
-            <Link to="/cart">Cart-({cartItems.length} items)</Link></li>
-           <button className="px-4  hover:text-orange-600"
-           onClick={() => { 
-            btnName === "Login" ? setBtnName("Logout") :
-             setBtnName("Login")} }>{btnName}</button>
-             <li className='px-4 font-bold  hover:text-orange-600'>{loggedInUser}</li>
-         </ul>
-        </div>       
-        </div>
-       )
-}
 
-export default Header
+  return (
+    <header className="rf-header">
+      {/* Brand */}
+      <Link to="/" className="rf-header-logo-wrap">
+        <img className="rf-header-logo" src={LOGO_URL} alt="Fork & Flame logo" />
+        <span className="rf-header-brand">
+          Fork &amp; <span>Flame</span>
+        </span>
+      </Link>
 
+      {/* Nav */}
+      <nav>
+        <ul className="rf-nav">
+          <li>
+            <span className="rf-nav-status">
+              {onlineStatus ? "🟢" : "🔴"}
+            </span>
+          </li>
+          <li>
+            <Link to="/" className="rf-nav-link">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="rf-nav-link">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="rf-nav-link">
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link to="/grocery" className="rf-nav-link">
+              Grocery
+            </Link>
+          </li>
+          <li>
+            <Link to="/cart" className="rf-nav-cart">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+              </svg>
+              Cart
+              {cartItems.length > 0 && (
+                <span className="rf-nav-cart-count">{cartItems.length}</span>
+              )}
+            </Link>
+          </li>
+          <li>
+            <button
+              className="rf-nav-login-btn"
+              onClick={() =>
+                setBtnName(btnName === "Login" ? "Logout" : "Login")
+              }
+            >
+              {btnName}
+            </button>
+          </li>
+          {loggedInUser && (
+            <li>
+              <span className="rf-nav-user">{loggedInUser}</span>
+            </li>
+          )}
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;

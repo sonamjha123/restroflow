@@ -12,6 +12,7 @@ import {Provider} from "react-redux"
 import Cart from "./components/Cart";
 //lazyloading, onDemand loading
 import appStore from "./utils/appStore";
+import Footer from "./components/Footer";
 const GroceryStore = lazy(() => import("./components/GroceryStore"));
 
 const AppLayout = () => {
@@ -30,6 +31,7 @@ const AppLayout = () => {
         <Header />
         {/* Outlet is used to render the child routes */}
         <Outlet />
+        <Footer />
       </div>
     </UserContext.Provider>
     </Provider>

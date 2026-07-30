@@ -2,7 +2,7 @@ import { shimmer_card } from "../utils/constants";
 
 const CardShimmer = () => {
     return (
-        <div className="shimmer-card">
+      <div className="shimmer-card">
       <div className="shimmer-img stroke animate"></div>
       <div className="shimmer-title stroke animate"></div>
       <div className="shimmer-tags stroke animate "></div>
